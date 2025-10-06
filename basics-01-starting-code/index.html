@@ -9,21 +9,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js" defer></script>
+    <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js" defer></script> 
     <script src="app.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>Vue Events</h1>
+      <h1>Vue Course Goals</h1>
     </header>
-    <section id="events">
-      <h2>Events in Action</h2>
-      <button @click="add(10)">Add 10</button>
-      <button @click="reduce(5)">Subtract 5</button>
-      <p>Result: {{ counter }}</p>
-      <input type="text" v-model="name">
-      <button @click="resetInput">Reset Input</button>
-      <p>Your Name: {{ name }}</p>
+    <section id="user-goal">
+      <h2>My Course Goal</h2>
+      <p>{{ courseGoal }}</p>
+      <p>Learn more <a :href="vueLink" target="_blank">about Vue!</a></p>
     </section>
   </body>
 </html>
