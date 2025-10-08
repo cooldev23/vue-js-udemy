@@ -49,8 +49,8 @@
               'log--player': log.attacker === 'Player',
               'log--monster': log.attacker === 'Monster'
             }">{{ log.attacker }}</span>
-            <span v-if="log.type === 'heals'"> heals themself for <span class="log--heal">{{ log.amount }}</span> points</span>
-            <span v-else> attacks for <span class="log--damage">{{ log.amount }}</span> damage</span>
+            <span v-if="log.type === 'heals'"> heals themself for <span class="log--heal">{{ log.amount }} points</span></span>
+            <span v-else> attacks for <span class="log--damage">{{ log.amount }} damage</span></span>
           </li>
         </ul>
       </section>
