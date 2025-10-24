@@ -3,7 +3,7 @@
 		<h1>Me and My Friends</h1>
 	</header>
 	<ul>
-		<friend-contact v-for="friend in friends" :key="friend.id" :friend="friend" @toggle-favorite="toggleFavoriteStatus"></friend-contact>
+		<friend-contact v-for="friend in friends" :key="friend.id" :friend="friend" @toggle-favorite="toggleFavoriteStatus" @delete-friend="deleteContact"></friend-contact>
 	</ul>
   <friend-form @submit-form="addFriend"></friend-form>
 </template>
@@ -36,8 +36,12 @@ export default {
       selectedFriend.isFavorite = !selectedFriend.isFavorite;
     },
     addFriend(formData) {
+      formData.id = this.friends.length + 1;
       this.friends.push(formData);     
-    }
+    },
+    deleteContact(friendId) {
+      this.friends = this.friends.filter((friend) => friend.id !== friendId);
+    },
   }
 }
 </script>
